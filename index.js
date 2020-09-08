@@ -41,13 +41,13 @@ let finalsData = [];
 let getFinals = (arr) => {
     
     for (let i = 0 ; i < arr.length; i++){   
-        if (arr[i].Stage == "Final"){
+        if (arr[i].Stage === "Final"){
             finalsData.push(arr[i]);
             }
     }
 return finalsData;
 };
-console.log(getFinals(fifaData));
+// console.log(getFinals(fifaData));
 
 
 
@@ -59,8 +59,10 @@ console.log(getFinals(fifaData));
 
 
 let getYears = (func1, array) => {
-    func1(array);
-    console.log( finalsData.Year );
+     let newArr = func1(array);
+     for (let i = 0 ; i < newArr.length; i++){ 
+    console.log( newArr[i].Year )};
+    console.log(newArr.length);
     /* code here */
 };
 
