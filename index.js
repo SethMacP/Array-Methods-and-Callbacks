@@ -1,7 +1,3 @@
-
-
-
-
 import { fifaData } from './fifa.js';
 // console.log(fifaData);
 
@@ -62,12 +58,16 @@ getFinals(fifaData);
 //Code Start
 
 function getYears (fnc, arr){
-    let newArr = fnc(arr);
+    //establish years as an array
     let years = [];
-    years = newArr.filter(item => item.Year > 1)
+    //callback function to grab matches that are finals
+    let newArr = fnc(arr);
+    //for each object in newArr, push the year from the finals filtered list.
+    newArr.forEach(function(newArr){years.push(newArr.Year);})
     return years;
 };
 console.log(getYears(getFinals, fifaData));
+
 // //old do not use~
 // console.log(getYears(getFinals, fifaData));
 // let getYears = (func1, array) => {
@@ -84,21 +84,21 @@ console.log(getYears(getFinals, fifaData));
 
 /* Task 4: Implement a higher-order function called `getWinners`, that accepts the callback function `getFinals()` and determine the winner (home or away) of each `finals` game. Return the name of all winning countries in an array called `winners` */ 
 //Code Start
-// let getWinners = (func1, arr1) => {
-//     let winners = [] ;
-//     let newArr = func1(arr1);
-// // console.log(Object.keys(winners[0]));
-//     for (let i = 0 ; i < newArr.length; i++){ 
-//         if(newArr[i]["Home Team Goals"] > newArr[i]["Away Team Goals"]){
-//             winners.push(newArr[i]["Home Team Name"]);
-//         }
-//         else{
-//             winners.push(newArr[i]["Away Team Name"]);
-//         }
-//     }
-//     return winners;
-// }
-// console.log(getWinners(getFinals, fifaData));
+let getWinners = (func1, arr1) => {
+    let winners = [] ;
+    let newArr = func1(arr1);
+// console.log(Object.keys(winners[0]));
+    for (let i = 0 ; i < newArr.length; i++){ 
+        if(newArr[i]["Home Team Goals"] > newArr[i]["Away Team Goals"]){
+            winners.push(newArr[i]["Home Team Name"]);
+        }
+        else{
+            winners.push(newArr[i]["Away Team Name"]);
+        }
+    }
+    return winners;
+}
+console.log(getWinners(getFinals, fifaData));
 
 
 
