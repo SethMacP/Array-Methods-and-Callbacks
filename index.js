@@ -119,13 +119,16 @@ Parameters:
  * callback function getWinners
  * callback function getYears
  */
-getWinnersByYear (cb1, cb2) {
-
-    cb1();
-    cb2();
+function getWinnersByYear (cb1, cb2, arr) {
+    // cb1(arr);
+    // cb2(arr);
+    let winners = cb1(arr);
+    let years = cb2(arr);
+    for (let i = 0 ; i < winners.length ; i++)
+        console.log( `In ${years[i]}, ${winners[i]} won the cup.` );
     
 }
-
+getWinnersByYear(getWinners, getYears, results(fifaData));
 
 
 
