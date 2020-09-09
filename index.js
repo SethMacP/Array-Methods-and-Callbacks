@@ -119,14 +119,13 @@ Parameters:
  * callback function getWinners
  * callback function getYears
  */
-function getWinnersByYear (cb1, cb2, arr) {
+function getWinnersByYear (cb1, cb2,arr) {
     // cb1(arr);
     // cb2(arr);
     let winners = cb1(arr);
     let years = cb2(arr);
     for (let i = 0 ; i < winners.length ; i++)
-        console.log( `In ${years[i]}, ${winners[i]} won the cup.` );
-    
+        console.log(`In ${years[i]}, ${winners[i]} won the cup.` );
 }
 getWinnersByYear(getWinners, getYears, results(fifaData));
 
@@ -149,6 +148,20 @@ getWinnersByYear(getWinners, getYears, results(fifaData));
 //.reduce the arrays to a single number, divide by the original length.
 //return the reduced number
 
+                  
+
+function avgGoals (cb1, arr){
+    for (let i = 0 ; i < arr.length ; i++ ) 
+        let hScore = fifaData[i]["Home Team Goals"]
+        let aScore = fifaData[i]["Away Team Goals"]
+        
+return 
+}
+
+
+
+
+
 function getAverageGoals(/* code here */) {
 
     /* code here */
@@ -156,6 +169,10 @@ function getAverageGoals(/* code here */) {
 };
 
 getAverageGoals();
+
+
+
+
 
 /// STRETCH 🥅 //
 
