@@ -148,27 +148,39 @@ getWinnersByYear(getWinners, getYears, results(fifaData));
 //.reduce the arrays to a single number, divide by the original length.
 //return the reduced number
 
-                  
+//   //Code Start
+// function getWinners (cb)  {
+//     let winners = [] ;
+//     cb.forEach((element) => 
+//         {
+//         if(element["Home Team Goals"] > element["Away Team Goals"])
+//             {winners.push(element["Home Team Name"]);}
+//         else
+//             {winners.push(element["Away Team Name"]);}
+//         })
+//     return winners;
+// }
 
-function avgGoals (cb1, arr){
-    for (let i = 0 ; i < arr.length ; i++ ) 
-        let hScore = fifaData[i]["Home Team Goals"]
-        let aScore = fifaData[i]["Away Team Goals"]
-        
-return 
-}
+// console.log(getWinners(results()));             
+function sum(acc, val) {
+    return acc + val;
+  }
+function getAverageGoals(data) {
+    var hScore = [];
+    var aScore = [];
 
+    data.forEach((element) =>
+{
+    hScore.push(element["Home Team Goals"])
+    aScore.push(element["Away Team Goals"]);
 
-
-
-
-function getAverageGoals(/* code here */) {
-
-    /* code here */
-
+})
+    let hTotal = hScore.reduce(sum, 0);
+    let aTotal = aScore.reduce(sum,0);
+   
 };
 
-getAverageGoals();
+getAverageGoals(fifaData);
 
 
 
